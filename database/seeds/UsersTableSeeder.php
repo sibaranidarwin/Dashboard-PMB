@@ -19,30 +19,12 @@ class UsersTableSeeder extends Seeder
             'level' =>'admin',
         ]); 
         User::create([
-            'name' => 'Warehouse',
-            'email' => 'warehouse@gmail.com',
-            'password' => bcrypt('adminadmin'),
-            'level' =>'warehouse',
-        ]); 
-        User::create([
-            'name' => 'Procurement',
-            'email' => 'procurement@gmail.com',
-            'password' => bcrypt('adminadmin'),
-            'level' =>'procurement',
-        ]); 
-        User::create([
-            'name' => 'Accounting',
-            'email' => 'accounting@gmail.com',
-            'password' => bcrypt('adminadmin'),
-            'level' =>'accounting',
-        ]); 
-        User::create([
-            'name' => 'PT United Tractors',
+            'name' => 'Darwin Sibarani',
             'id_vendor' => 2011000155,            
-            'email' => 'unitedtractors@gmail.com',
+            'email' => 'sibaranidarwin32@gmail.com',
             'npwp' => '4444444444444444',
             'password' => bcrypt('adminadmin'),
-            'level' =>'vendor',
+            'level' =>'pengunjung',
         ]); 
     }
 }

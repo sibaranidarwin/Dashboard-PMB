@@ -1136,4 +1136,269 @@ class VendorController extends Controller
         return redirect()->back()->with('success', 'Draft BA has been successfully canceled!');
     }
 
+    public function pmdk()
+    {
+        $user_vendor = Auth::User()->id_vendor;
+        $user_vendor2 = Auth::User()->name;
+        $name = Auth::User()->name;
+        $a = date('Y-m-d');
+        $b = date('Y-m-d',strtotime('+1 days'));
+        $range = [$a, $b];
+        
+        $good_receipt = good_receipt::where('id_vendor', $user_vendor)->where('id_inv',0)->orwhere('status','Auto Verify')->where(function($query) {
+			$query->where('status','Verified')
+            ->orWhereNull('status');})->count();
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $month = 1;
+            $date = \Carbon\Carbon::parse($year."-".$month."-01"); // universal truth month's first day is 1
+            $start = $date->startOfMonth()->format('Y-m-d H:i:s'); // 2000-02-01 00:00:00
+            $end = $date->endOfMonth()->format('Y-m-d H:i:s');
+            $invgr =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "GR")->sum('total_harga_everify');
+            $invba =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "BA")->sum('total_harga_everify');
+            // dd($invgr);
+            
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $invthngr =Invoice::whereYear('created_at', $year)->where("data_from", "GR")->sum('total_harga_everify');
+            $invthnba =Invoice::whereYear('created_at', $year)->where("data_from", "BA")->sum('total_harga_everify');
+
+        $invoicegr = Invoice::all()->where("data_from", "GR")->Where("id_vendor", $user_vendor)->count();
+        $invoiceba = Invoice::all()->where("data_from", "BA")->Where("id_vendor", $user_vendor)->count();
+        $dispute = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $user_vendor2)->count();
+        $notif = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $name)->whereBetween('updated_at', $range)->count();
+        $vendor = User::all()->where("level", "vendor")->count();
+        $draft = Draft_BA::all()->Where("id_vendor", $user_vendor)->count();
+        $ba = BA_Reconcile::all()->Where("id_vendor", $user_vendor)->count();
+        $month = null;
+        $year = null;
+
+        return view('vendor.pmdk',['month'=>$month, 'year'=>$year, 'good_receipt'=>$good_receipt,'draft'=>$draft, 'ba'=>$ba , 'invoicegr'=>$invoicegr, 'invoiceba'=>$invoiceba, 'dispute'=>$dispute, 'vendor'=>$vendor, 'notif'=>$notif, 'invgr'=>$invgr, 'invba'=>$invba, 'invthngr'=>$invthngr, 'invthnba'=>$invthnba]);
+    }
+
+    public function usm1()
+    {
+        $user_vendor = Auth::User()->id_vendor;
+        $user_vendor2 = Auth::User()->name;
+        $name = Auth::User()->name;
+        $a = date('Y-m-d');
+        $b = date('Y-m-d',strtotime('+1 days'));
+        $range = [$a, $b];
+        
+        $good_receipt = good_receipt::where('id_vendor', $user_vendor)->where('id_inv',0)->orwhere('status','Auto Verify')->where(function($query) {
+			$query->where('status','Verified')
+            ->orWhereNull('status');})->count();
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $month = 1;
+            $date = \Carbon\Carbon::parse($year."-".$month."-01"); // universal truth month's first day is 1
+            $start = $date->startOfMonth()->format('Y-m-d H:i:s'); // 2000-02-01 00:00:00
+            $end = $date->endOfMonth()->format('Y-m-d H:i:s');
+            $invgr =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "GR")->sum('total_harga_everify');
+            $invba =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "BA")->sum('total_harga_everify');
+            // dd($invgr);
+            
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $invthngr =Invoice::whereYear('created_at', $year)->where("data_from", "GR")->sum('total_harga_everify');
+            $invthnba =Invoice::whereYear('created_at', $year)->where("data_from", "BA")->sum('total_harga_everify');
+
+        $invoicegr = Invoice::all()->where("data_from", "GR")->Where("id_vendor", $user_vendor)->count();
+        $invoiceba = Invoice::all()->where("data_from", "BA")->Where("id_vendor", $user_vendor)->count();
+        $dispute = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $user_vendor2)->count();
+        $notif = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $name)->whereBetween('updated_at', $range)->count();
+        $vendor = User::all()->where("level", "vendor")->count();
+        $draft = Draft_BA::all()->Where("id_vendor", $user_vendor)->count();
+        $ba = BA_Reconcile::all()->Where("id_vendor", $user_vendor)->count();
+        $month = null;
+        $year = null;
+
+        return view('vendor.usm1',['month'=>$month, 'year'=>$year, 'good_receipt'=>$good_receipt,'draft'=>$draft, 'ba'=>$ba , 'invoicegr'=>$invoicegr, 'invoiceba'=>$invoiceba, 'dispute'=>$dispute, 'vendor'=>$vendor, 'notif'=>$notif, 'invgr'=>$invgr, 'invba'=>$invba, 'invthngr'=>$invthngr, 'invthnba'=>$invthnba]);
+    }
+
+    public function usm2()
+    {
+        $user_vendor = Auth::User()->id_vendor;
+        $user_vendor2 = Auth::User()->name;
+        $name = Auth::User()->name;
+        $a = date('Y-m-d');
+        $b = date('Y-m-d',strtotime('+1 days'));
+        $range = [$a, $b];
+        
+        $good_receipt = good_receipt::where('id_vendor', $user_vendor)->where('id_inv',0)->orwhere('status','Auto Verify')->where(function($query) {
+			$query->where('status','Verified')
+            ->orWhereNull('status');})->count();
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $month = 1;
+            $date = \Carbon\Carbon::parse($year."-".$month."-01"); // universal truth month's first day is 1
+            $start = $date->startOfMonth()->format('Y-m-d H:i:s'); // 2000-02-01 00:00:00
+            $end = $date->endOfMonth()->format('Y-m-d H:i:s');
+            $invgr =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "GR")->sum('total_harga_everify');
+            $invba =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "BA")->sum('total_harga_everify');
+            // dd($invgr);
+            
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $invthngr =Invoice::whereYear('created_at', $year)->where("data_from", "GR")->sum('total_harga_everify');
+            $invthnba =Invoice::whereYear('created_at', $year)->where("data_from", "BA")->sum('total_harga_everify');
+
+        $invoicegr = Invoice::all()->where("data_from", "GR")->Where("id_vendor", $user_vendor)->count();
+        $invoiceba = Invoice::all()->where("data_from", "BA")->Where("id_vendor", $user_vendor)->count();
+        $dispute = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $user_vendor2)->count();
+        $notif = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $name)->whereBetween('updated_at', $range)->count();
+        $vendor = User::all()->where("level", "vendor")->count();
+        $draft = Draft_BA::all()->Where("id_vendor", $user_vendor)->count();
+        $ba = BA_Reconcile::all()->Where("id_vendor", $user_vendor)->count();
+        $month = null;
+        $year = null;
+
+        return view('vendor.usm2',['month'=>$month, 'year'=>$year, 'good_receipt'=>$good_receipt,'draft'=>$draft, 'ba'=>$ba , 'invoicegr'=>$invoicegr, 'invoiceba'=>$invoiceba, 'dispute'=>$dispute, 'vendor'=>$vendor, 'notif'=>$notif, 'invgr'=>$invgr, 'invba'=>$invba, 'invthngr'=>$invthngr, 'invthnba'=>$invthnba]);
+    }
+
+    public function usm3()
+    {
+        $user_vendor = Auth::User()->id_vendor;
+        $user_vendor2 = Auth::User()->name;
+        $name = Auth::User()->name;
+        $a = date('Y-m-d');
+        $b = date('Y-m-d',strtotime('+1 days'));
+        $range = [$a, $b];
+        
+        $good_receipt = good_receipt::where('id_vendor', $user_vendor)->where('id_inv',0)->orwhere('status','Auto Verify')->where(function($query) {
+			$query->where('status','Verified')
+            ->orWhereNull('status');})->count();
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $month = 1;
+            $date = \Carbon\Carbon::parse($year."-".$month."-01"); // universal truth month's first day is 1
+            $start = $date->startOfMonth()->format('Y-m-d H:i:s'); // 2000-02-01 00:00:00
+            $end = $date->endOfMonth()->format('Y-m-d H:i:s');
+            $invgr =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "GR")->sum('total_harga_everify');
+            $invba =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "BA")->sum('total_harga_everify');
+            // dd($invgr);
+            
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $invthngr =Invoice::whereYear('created_at', $year)->where("data_from", "GR")->sum('total_harga_everify');
+            $invthnba =Invoice::whereYear('created_at', $year)->where("data_from", "BA")->sum('total_harga_everify');
+
+        $invoicegr = Invoice::all()->where("data_from", "GR")->Where("id_vendor", $user_vendor)->count();
+        $invoiceba = Invoice::all()->where("data_from", "BA")->Where("id_vendor", $user_vendor)->count();
+        $dispute = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $user_vendor2)->count();
+        $notif = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $name)->whereBetween('updated_at', $range)->count();
+        $vendor = User::all()->where("level", "vendor")->count();
+        $draft = Draft_BA::all()->Where("id_vendor", $user_vendor)->count();
+        $ba = BA_Reconcile::all()->Where("id_vendor", $user_vendor)->count();
+        $month = null;
+        $year = null;
+
+        return view('vendor.usm3',['month'=>$month, 'year'=>$year, 'good_receipt'=>$good_receipt,'draft'=>$draft, 'ba'=>$ba , 'invoicegr'=>$invoicegr, 'invoiceba'=>$invoiceba, 'dispute'=>$dispute, 'vendor'=>$vendor, 'notif'=>$notif, 'invgr'=>$invgr, 'invba'=>$invba, 'invthngr'=>$invthngr, 'invthnba'=>$invthnba]);
+    }
+
+    public function utbk()
+    {
+        $user_vendor = Auth::User()->id_vendor;
+        $user_vendor2 = Auth::User()->name;
+        $name = Auth::User()->name;
+        $a = date('Y-m-d');
+        $b = date('Y-m-d',strtotime('+1 days'));
+        $range = [$a, $b];
+        
+        $good_receipt = good_receipt::where('id_vendor', $user_vendor)->where('id_inv',0)->orwhere('status','Auto Verify')->where(function($query) {
+			$query->where('status','Verified')
+            ->orWhereNull('status');})->count();
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $month = 1;
+            $date = \Carbon\Carbon::parse($year."-".$month."-01"); // universal truth month's first day is 1
+            $start = $date->startOfMonth()->format('Y-m-d H:i:s'); // 2000-02-01 00:00:00
+            $end = $date->endOfMonth()->format('Y-m-d H:i:s');
+            $invgr =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "GR")->sum('total_harga_everify');
+            $invba =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "BA")->sum('total_harga_everify');
+            // dd($invgr);
+            
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $invthngr =Invoice::whereYear('created_at', $year)->where("data_from", "GR")->sum('total_harga_everify');
+            $invthnba =Invoice::whereYear('created_at', $year)->where("data_from", "BA")->sum('total_harga_everify');
+
+        $invoicegr = Invoice::all()->where("data_from", "GR")->Where("id_vendor", $user_vendor)->count();
+        $invoiceba = Invoice::all()->where("data_from", "BA")->Where("id_vendor", $user_vendor)->count();
+        $dispute = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $user_vendor2)->count();
+        $notif = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $name)->whereBetween('updated_at', $range)->count();
+        $vendor = User::all()->where("level", "vendor")->count();
+        $draft = Draft_BA::all()->Where("id_vendor", $user_vendor)->count();
+        $ba = BA_Reconcile::all()->Where("id_vendor", $user_vendor)->count();
+        $month = null;
+        $year = null;
+
+        return view('vendor.utbk',['month'=>$month, 'year'=>$year, 'good_receipt'=>$good_receipt,'draft'=>$draft, 'ba'=>$ba , 'invoicegr'=>$invoicegr, 'invoiceba'=>$invoiceba, 'dispute'=>$dispute, 'vendor'=>$vendor, 'notif'=>$notif, 'invgr'=>$invgr, 'invba'=>$invba, 'invthngr'=>$invthngr, 'invthnba'=>$invthnba]);
+    }
+
+    public function prodi()
+    {
+        $user_vendor = Auth::User()->id_vendor;
+        $user_vendor2 = Auth::User()->name;
+        $name = Auth::User()->name;
+        $a = date('Y-m-d');
+        $b = date('Y-m-d',strtotime('+1 days'));
+        $range = [$a, $b];
+        
+        $good_receipt = good_receipt::where('id_vendor', $user_vendor)->where('id_inv',0)->orwhere('status','Auto Verify')->where(function($query) {
+			$query->where('status','Verified')
+            ->orWhereNull('status');})->count();
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $month = 1;
+            $date = \Carbon\Carbon::parse($year."-".$month."-01"); // universal truth month's first day is 1
+            $start = $date->startOfMonth()->format('Y-m-d H:i:s'); // 2000-02-01 00:00:00
+            $end = $date->endOfMonth()->format('Y-m-d H:i:s');
+            $invgr =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "GR")->sum('total_harga_everify');
+            $invba =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "BA")->sum('total_harga_everify');
+            // dd($invgr);
+            
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $invthngr =Invoice::whereYear('created_at', $year)->where("data_from", "GR")->sum('total_harga_everify');
+            $invthnba =Invoice::whereYear('created_at', $year)->where("data_from", "BA")->sum('total_harga_everify');
+
+        $invoicegr = Invoice::all()->where("data_from", "GR")->Where("id_vendor", $user_vendor)->count();
+        $invoiceba = Invoice::all()->where("data_from", "BA")->Where("id_vendor", $user_vendor)->count();
+        $dispute = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $user_vendor2)->count();
+        $notif = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $name)->whereBetween('updated_at', $range)->count();
+        $vendor = User::all()->where("level", "vendor")->count();
+        $draft = Draft_BA::all()->Where("id_vendor", $user_vendor)->count();
+        $ba = BA_Reconcile::all()->Where("id_vendor", $user_vendor)->count();
+        $month = null;
+        $year = null;
+
+        return view('vendor.prodi',['month'=>$month, 'year'=>$year, 'good_receipt'=>$good_receipt,'draft'=>$draft, 'ba'=>$ba , 'invoicegr'=>$invoicegr, 'invoiceba'=>$invoiceba, 'dispute'=>$dispute, 'vendor'=>$vendor, 'notif'=>$notif, 'invgr'=>$invgr, 'invba'=>$invba, 'invthngr'=>$invthngr, 'invthnba'=>$invthnba]);
+    }
+    
+    public function asal()
+    {
+        $user_vendor = Auth::User()->id_vendor;
+        $user_vendor2 = Auth::User()->name;
+        $name = Auth::User()->name;
+        $a = date('Y-m-d');
+        $b = date('Y-m-d',strtotime('+1 days'));
+        $range = [$a, $b];
+        
+        $good_receipt = good_receipt::where('id_vendor', $user_vendor)->where('id_inv',0)->orwhere('status','Auto Verify')->where(function($query) {
+			$query->where('status','Verified')
+            ->orWhereNull('status');})->count();
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $month = 1;
+            $date = \Carbon\Carbon::parse($year."-".$month."-01"); // universal truth month's first day is 1
+            $start = $date->startOfMonth()->format('Y-m-d H:i:s'); // 2000-02-01 00:00:00
+            $end = $date->endOfMonth()->format('Y-m-d H:i:s');
+            $invgr =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "GR")->sum('total_harga_everify');
+            $invba =Invoice::whereBetween('created_at', [$start, $end])->where("data_from", "BA")->sum('total_harga_everify');
+            // dd($invgr);
+            
+            $year = CarbonImmutable::now()->locale('id_ID')->format('Y');
+            $invthngr =Invoice::whereYear('created_at', $year)->where("data_from", "GR")->sum('total_harga_everify');
+            $invthnba =Invoice::whereYear('created_at', $year)->where("data_from", "BA")->sum('total_harga_everify');
+
+        $invoicegr = Invoice::all()->where("data_from", "GR")->Where("id_vendor", $user_vendor)->count();
+        $invoiceba = Invoice::all()->where("data_from", "BA")->Where("id_vendor", $user_vendor)->count();
+        $dispute = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $user_vendor2)->count();
+        $notif = good_receipt::all()->where("status", "Disputed")->Where("vendor_name", $name)->whereBetween('updated_at', $range)->count();
+        $vendor = User::all()->where("level", "vendor")->count();
+        $draft = Draft_BA::all()->Where("id_vendor", $user_vendor)->count();
+        $ba = BA_Reconcile::all()->Where("id_vendor", $user_vendor)->count();
+        $month = null;
+        $year = null;
+
+        return view('vendor.asal',['month'=>$month, 'year'=>$year, 'good_receipt'=>$good_receipt,'draft'=>$draft, 'ba'=>$ba , 'invoicegr'=>$invoicegr, 'invoiceba'=>$invoiceba, 'dispute'=>$dispute, 'vendor'=>$vendor, 'notif'=>$notif, 'invgr'=>$invgr, 'invba'=>$invba, 'invthngr'=>$invthngr, 'invthnba'=>$invthnba]);
+    }
 }

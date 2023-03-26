@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>e-Spice - Admin</title>
+    <title>PMB - Admin</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -111,58 +111,53 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="menu-title">DASHBOARD</li><!-- /.menu-title -->
                     <li class="active">
-                        <a href="{{url('admin/dashboard')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard</a>
+                        <a href="{{url('admin/dashboard')}}"><i class="menu-icon fa fa-laptop"></i>Home</a>
                     </li>
-                    <li class="menu-title">DATA Good Receipt</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <i class="menu-icon fa fa-file"></i>Good Receipt</a>
+                            <i class="menu-icon fa fa-file"></i>Jalur Pendaftaran</a>
 
                         <ul class="sub-menu children dropdown-menu" id="menu_dropdown">
                             <li>
                                 <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
-                                            class="fa fa-table"></i>All Status</span></a>
+                                            class="fa fa-table"></i>PMDK</span></a>
                             </li>
-                            <li class="menu_utama">
-                                <a class="accordion-heading" data-toggle="collapse" data-target="#submenu3"><span
-                                        class=""><i class="fa fa-table"></i>By Status
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        ></span></a>
-                                <ul class="nav nav-list collapse sub-menu children menu_sub" id="submenu3">
-                                    <li><a href="{{url('admin/po')}}" title="Title"><i class="fa fa-info"></i>Not
-                                            Verified</a></li>
-                                    <li><a href="{{url('admin/pover')}}" title="Title"><i
-                                                class="fa fa-check "></i>Verified</a></li>
-                                    <li><a href="{{url('admin/poreject')}}" title="Title"><i
-                                                class="fa fa-close"></i>Rejected</a></li>
-                                </ul>
+                            <li>
+                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                            class="fa fa-table"></i>USM 1</span></a>
+                            </li>
+                            <li>
+                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                            class="fa fa-table"></i>USM 2</span></a>
+                            </li>
+                            <li>
+                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                            class="fa fa-table"></i>USM 3</span></a>
+                            </li>
+                            <li>
+                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                            class="fa fa-table"></i>UTBK</span></a>
                             </li>
                         </ul>
                     </li>
 
-
-
-                    <li class="menu-item-has-children dropdown ">
+                    <li class="menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-warning"></i>Dispute Invoice</a>
-                        <ul class="sub-menu children dropdown-menu ">
-                            <li><i class="fa fa-table "></i><a href="{{url('admin/disputed')}}">Show</a></li>
+                            aria-expanded="false"> <i class="menu-icon fa fa-warning"></i>Prodi</a>
+                    </li>
 
-                        </ul>
-                    </li>
-                    <li class="menu-title">DATA Invoice</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown ">
+                    <li class="menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-file-pdf-o"></i>Invoice Proposal</a>
-                        <ul class="sub-menu children dropdown-menu ">
-                            <li><i class="fa fa-table "></i><a href="{{url('admin/invoice')}}">Invoice GR</a></li>
-                            <li><i class="fa fa-table "></i><a href="{{url('admin/invoiceba')}}">Invoice BA</a></li>
-                        </ul>
+                            aria-expanded="false"> <i class="menu-icon fa fa-file-pdf-o"></i>Asal Sekolah</a>
                     </li>
-                    <li class="menu-title">DATA USER</li><!-- /.menu-title -->
+
+                    <li class="menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <i class="menu-icon fa fa-file-pdf-o"></i>Akreditasi</a>
+                    </li>
+
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Admin</a>
@@ -174,31 +169,7 @@
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Accounting</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-share"></i><a href="{{url('admin/accounting')}}">All
-                                    Accounting</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Warehouse</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-share"></i><a href="{{url('admin/warehouse')}}">All
-                                    Warehouse</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Procumerent</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-share"></i><a href="{{url('admin/procumerent')}}">All
-                                    Procumerent</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Vendor</a>
+                            aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Pengunjung</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-share"></i><a href="{{url('admin/vendor')}}">All Vendor</a>
                             </li>
@@ -216,7 +187,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{url('admin/dashboard')}}"><img style="width: 45%;"
+                    <a class="navbar-brand text-center" href="{{url('admin/dashboard')}}"><img style="width: 19%;"
                             src="{{asset('admin/images/logo.png')}}" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="{{url('admin/dashboard')}}"><img
                             src="{{asset('admin/images/logo2.png')}}" alt="Logo"></a>

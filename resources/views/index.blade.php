@@ -47,7 +47,7 @@
                 <form method="POST" action="{{ route('loginpost') }}">
                     @csrf
                     <div class="page-title">
-                        <h1 class="mb-3" style="text-align: center;"><strong>Login e-Spice </strong></h1>
+                        <h1 class="mb-3" style="text-align: center;"><strong>Login PMB </strong></h1>
                     </div>
                     @if($message = Session::get('destroy'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">

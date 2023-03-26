@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('npwp')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('level',['vendor','admin','warehouse','accounting','procurement']);
+            $table->enum('level',['admin','pengunjung']);
             $table->string('foto')->default('avatar.png');
             $table->rememberToken();
             $table->timestamps();

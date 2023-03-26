@@ -157,6 +157,15 @@ Route::get('vendor/notyetdraft', 'VendorController@notyetdraft');
 Route::get('vendor/verba', 'VendorController@verba');
 Route::get('vendor/puchaseorderreject', 'VendorController@puchaseorderreject');
 
+Route::get('vendor/pmdk', 'VendorController@pmdk')->name('vendor/pmdk');
+Route::get('vendor/usm1', 'VendorController@usm1')->name('vendor/usm1');
+Route::get('vendor/usm2', 'VendorController@usm2')->name('vendor/usm2');
+Route::get('vendor/usm3', 'VendorController@usm3')->name('vendor/usm3');
+Route::get('vendor/utbk', 'VendorController@utbk')->name('vendor/utbk');
+
+Route::get('vendor/prodi', 'VendorController@prodi')->name('vendor/prodi');
+Route::get('vendor/asal', 'VendorController@asal')->name('vendor/asal');
+
 Route::post('vendor/dispute-datagr','VendorController@edit')->name('dispute-datagr-vendor/{id}');
 
 Route::post('vendor/edit-datagr','VendorController@edit')->name('update-datagr-vendor/{id_gr}');

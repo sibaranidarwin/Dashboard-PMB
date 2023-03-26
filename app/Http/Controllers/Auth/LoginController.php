@@ -41,7 +41,8 @@ class LoginController extends Controller
     public function login(Request $request)
     {   
         $input = $request->all();
-  
+        
+        // dd($input);
         $this->validate($request, [
             'email' => 'required',
             'password' => 'required',
@@ -55,7 +56,7 @@ class LoginController extends Controller
             }elseif(auth()->user()->level == "admin"){
                 return redirect()->route('admin/dashboard');
             }
-            elseif(auth()->user()->level == "vendor"){
+            elseif(auth()->user()->level == "pengunjung"){
                 return redirect()->route('vendor/dashboard');
             }
             elseif(auth()->user()->level == "procurement"){
