@@ -53,89 +53,80 @@
                                         <h5 class="text-sm-center mt-2 mb-1">email@email.com</h5>
                                     </div>
                                     <hr>
-                                    <div class="card-text text-sm-center">
-                                        <a href="#"><i class="fa fa-facebook pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-twitter pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
-                                    </div>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="">Name <span style="color: red">*</span></label>
+                                                <input type="text" name="name" value="{{ old('name') }}" autocomplete="off"
+                                                    required="" class="form-control">
+                                                <input type="text" name="foto" value="avatar.png" hidden="">
+                                            </div>
+
+                                            {{-- <div class="form-group">
+                                                <label for="id_vendor">Vendor ID </label>
+                                                <select name="id_vendor" id="id_vendor" class="form-control">
+                                                    <option disabled selected>Pilih Nomor Vendor</option>
+                                                    @foreach ($vendor as $id_vendor)
+                                                        <option value="{{ $id_vendor['id_vendor'] }}">{{ $id_vendor['id_vendor'] }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('id_vendor')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div> --}}
+
+                                            <div class="form-group">
+                                                <label for="">Email <span style="color: red">*</span></label>
+                                                <input type="text" id="email" type="email"
+                                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                                    value="{{ old('email') }}" required>
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Password <span style="color: red">*</span></label>
+                                                <input type="password" required=""
+                                                    class="form-control @error('password') is-invalid @enderror" name="password">
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Password Confirmation <span style="color: red">*</span></label>
+                                                <input id="password-confirm" type="password" class="form-control"
+                                                    name="password_confirmation" required autocomplete="new-password">
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Level <span style="color: red">*</span></label>
+                                                <select name="level" required="" id="" class="form-control">
+                                                    <option value="admin">Admin</option>
+                                                    <option value="pengunjung">User</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" onclick="return confirm('Are You Sure?')"
+                                                    class="btn btn-primary">
+                                                    {{ __('Register') }}
+                                                </button>
+                                            </div>
+                                        </div>
                             </div>
+
                         </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="">Name <span style="color: red">*</span></label>
-                                    <input type="text" name="name" value="{{ old('name') }}" autocomplete="off"
-                                        required="" class="form-control">
-                                    <input type="text" name="foto" value="avatar.png" hidden="">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="id_vendor">Vendor ID </label>
-                                    <select name="id_vendor" id="id_vendor" class="form-control">
-                                        <option disabled selected>Pilih Nomor Vendor</option>
-                                        @foreach ($vendor as $id_vendor)
-                                            <option value="{{ $id_vendor['id_vendor'] }}">{{ $id_vendor['id_vendor'] }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('id_vendor')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="">Email <span style="color: red">*</span></label>
-                                    <input type="text" id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required>
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Password <span style="color: red">*</span></label>
-                                    <input type="password" required=""
-                                        class="form-control @error('password') is-invalid @enderror" name="password">
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="">Password Confirmation <span style="color: red">*</span></label>
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Level <span style="color: red">*</span></label>
-                                    <select name="level" required="" id="" class="form-control">
-                                        <option value="admin">Admin</option>
-                                        <option value="warehouse">Warehouse</option>
-                                        <option value="accounting">Accounting</option>
-                                        <option value="procurement">Procurement</option>
-                                        <option value="vendor">Vendor</option>
-
-                                    </select>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" onclick="return confirm('Are You Sure?')"
-                                        class="btn btn-primary">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                         </form>
 
                     </div>

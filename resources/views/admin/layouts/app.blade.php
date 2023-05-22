@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('admin/assets/css/cs-skin-elastic.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
@@ -111,58 +112,55 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="{{url('admin/dashboard')}}"><i class="menu-icon fa fa-laptop"></i>Home</a>
+                    <li class="">
+                        <a href="{{url('admin/dashboard')}}"><i class="menu-icon fa fa-home"></i>Home</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <i class="menu-icon fa fa-file"></i>Jalur Pendaftaran</a>
+                            <i class="menu-icon fa fa-retweet"></i>Jalur Pendaftaran</a>
 
                         <ul class="sub-menu children dropdown-menu" id="menu_dropdown">
                             <li>
-                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                <a href="{{url('admin/pmdk')}}" class="accordion-heading"><span class=""><i
                                             class="fa fa-table"></i>PMDK</span></a>
                             </li>
                             <li>
-                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                <a href="{{url('admin/usm1')}}" class="accordion-heading"><span class=""><i
                                             class="fa fa-table"></i>USM 1</span></a>
                             </li>
                             <li>
-                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                <a href="{{url('admin/usm2')}}" class="accordion-heading"><span class=""><i
                                             class="fa fa-table"></i>USM 2</span></a>
                             </li>
                             <li>
-                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                <a href="{{url('admin/usm3')}}" class="accordion-heading"><span class=""><i
                                             class="fa fa-table"></i>USM 3</span></a>
                             </li>
                             <li>
-                                <a href="{{url('admin/all')}}" class="accordion-heading"><span class=""><i
+                                <a href="{{url('admin/utbk')}}" class="accordion-heading"><span class=""><i
                                             class="fa fa-table"></i>UTBK</span></a>
                             </li>
                         </ul>
                     </li>
 
                     <li class="menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-warning"></i>Prodi</a>
+                        <a href="{{ url('admin/prodi') }}"> <i class="menu-icon fa fa-bookmark"></i>Prodi</a>
                     </li>
 
                     <li class="menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-file-pdf-o"></i>Asal Sekolah</a>
+                        <a href="{{ url('admin/asal') }}"><i class="menu-icon fa fa-folder-open"></i>Asal Kabupaten</a>
                     </li>
 
                     <li class="menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-file-pdf-o"></i>Akreditasi</a>
+                        <a href="{{ url('admin/akreditasi') }}"> <i class="menu-icon fa fa-circle-check"></i>Akreditasi</a>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Admin</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-users"></i><a href="{{url('admin/user')}}">All User</a></li>
+                            <li><i class="menu-icon fa fa-users"></i><a href="{{url('admin/user')}}">Daftar Admin</a></li>
                             <li><i class="menu-icon fa fa-unlock-alt"></i><a
                                     href="{{route('user.showing',auth()->user()->id)}}">Edit Profile</a></li>
                         </ul>
@@ -171,7 +169,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Pengunjung</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-share"></i><a href="{{url('admin/vendor')}}">All Vendor</a>
+                            <li><i class="menu-icon fa fa-share"></i><a href="{{url('admin/vendor')}}">Daftar Pengunjung</a>
                             </li>
                         </ul>
                     </li>
@@ -260,7 +258,7 @@
             function readURL(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
-                    
+
                     reader.onload = function (e) {
                         $('#profile-img-tag').attr('src', e.target.result);
                     }
@@ -517,6 +515,7 @@
             });
             // Bar Chart #flotBarChart End
         });
+
         </script>
 </body>
 

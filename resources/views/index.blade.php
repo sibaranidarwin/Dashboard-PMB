@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/images/favicon.ico')}}">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{asset('login/vendor/bootstrap/css/bootstrap.min.css')}}">
     <!--===============================================================================================-->
@@ -40,7 +40,7 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic ">
-                    <img src="assets/img/hero/DOC4.jpg" alt="">
+                    <img src="assets/img/hero/DOC4.jpg" alt="" style="width: 90%;">
                     {{-- <p class="d-flex align-items-center mt-3" data-animation="fadeInLeft" data-delay=".6s">Vendor Invoicing System is a website created to make it easier for MIP/MKP/MHA parties to receive invoices from vendors, where the process is done online entry.</p> --}}
                 </div>
 

@@ -12,13 +12,13 @@
                                 <a href="{{url('/')}}"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
-                                   
+
                         @guest
                          <div class="col-xl-8 col-lg-8 col-md-8">
                             <!-- Main-menu -->
                             <div class="main-menu f-left d-none d-lg-block">
-                                <nav> 
-                                    <ul id="navigation">    
+                                <nav>
+                                    <ul id="navigation">
                                         <li><a href="{{url('/')}}"> Home</a></li>
                                         <li><a href="{{url('about')}}">About Pedora</a></li>
                                     </ul>
@@ -34,8 +34,8 @@
                         <div class="col-xl-7 col-lg-7 col-md-7">
                             <!-- Main-menu -->
                             <div class="main-menu f-left d-none d-lg-block">
-                                <nav> 
-                                    <ul id="navigation">    
+                                <nav>
+                                    <ul id="navigation">
                                         <li><a href="{{url('home')}}"> Home</a></li>
                                         <li><a href="{{url('about')}}">About Pedora</a></li>
                                     </ul>
@@ -54,8 +54,8 @@
 
                             </div>
                         </div>
-                        @endguest 
-                        
+                        @endguest
+
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -74,7 +74,7 @@
                 padding-top: 160px;
             }
             .blog_area{
-              padding-top: 2%; 
+              padding-top: 2%;
             }
             .blog_right_sidebar{
               margin-top: -7.5%;
@@ -88,7 +88,7 @@
         </style>
     </div>
      <!-- Slider Area End-->
-     
+
    <!--================Blog Area =================-->
     <div class="col-md-11  container">
             @if($message = Session::get('destroy'))
@@ -117,7 +117,7 @@
    <section class="blog_area single-post-area section-padding">
       <div class="container">
          <div class="row">
-         
+
             <div class="col-lg-8 posts-list">
                <div class="blog-author ">
                   <h4 style="margin-top: 2%">Informasi Saya</h4><br><br>
@@ -127,7 +127,7 @@
                  <div class="row">
 
                     <div class="col-md-2 mx-auto" >
-                    
+
                       <label for="profile-img">
                     <img src="https://img.icons8.com/carbon-copy/2x/camera.png" class="hover rounded-circle " id="profile-img-tag"  alt="">
                     <span><p class="" style="font-size: 12px;margin-left: -10px;margin-top: -5px">*ubah foto profile</p></span>
@@ -162,7 +162,7 @@
                     <button type="submit" class="genric-btn info radius" onclick="return myFunctionConfirm()">ubah</button>
 
                   </div>
-                  
+
                  </div>
                  </form>
                </div>
@@ -173,7 +173,7 @@
                      <!-- PROFILE -->
                     <div class="card">
                       <div class="card-header" style="background-color: #ffff;border:none;background-image: url('https://image.freepik.com/free-vector/abstract-futuristic-background_23-2148392654.jpg');height:100px  ;">
-                        
+
                       </div>
                       <div class="card-body container" style="margin-top: -20%;">
                       <div class="media">
@@ -215,7 +215,7 @@
                       </div>
                     </div>
                     </div>
-  
+
                   </aside>
                 <!--   <aside class="single_sidebar_widget newsletter_widget">
                      <h4 class="widget_title">Newsletter</h4>
@@ -230,7 +230,7 @@
                   </aside> -->
                </div>
             </div>
-                        
+
             <div class="col-md-12">
                 <div class="blog-author">
                   <h4 style="margin-top: 2%">Laporan Saya</h4><br><br>
@@ -239,12 +239,12 @@
                  @if($pengaduan->status == "verified")
                   <div class="media align-items-top" style="margin-bottom: 4%">
                      <img src="{{asset('upload/'.$pengaduan->cover)}}" alt="">
-                     
+
                      <div class="media-body">
                         <a href="{{route('home.showing',$pengaduan->id)}}">
                            <h4>{{$pengaduan->judul}}</h4>
                         </a>
-                          <p style="font-size: 13px;margin-top: 0%;"> 
+                          <p style="font-size: 13px;margin-top: 0%;">
                             <span class="align-middle"><i class="fa fa-info-circle"></i></span><span> &nbsp;Belum Terverifikasi</span>
                             <span style="margin-left:30px" class="border rounded">&nbsp;&nbsp;&nbsp;Harus diverifikasi dalam 3 hari&nbsp;&nbsp;&nbsp;</span></p>
 
@@ -267,7 +267,7 @@
                         <a href="{{route('home.showing',$pengaduan->id)}}">
                            <h4>{{$pengaduan->judul}}</h4>
                         </a>
-                          <p style="font-size: 13px;margin-top: 0%;"> 
+                          <p style="font-size: 13px;margin-top: 0%;">
                             <span class="align-middle font-weight-bold text-danger"><i class="fa fa-sync rounded rounded-circle"></i></span><span class="text-danger"> &nbsp;Proses</span>
                         {!!Str::limit($pengaduan->isi_laporan, 300 )!!}
                         <br> <img style="border-radius: 0;" class="img-fluid" src="{{asset('upload/'.$pengaduan->foto)}}" alt="">
@@ -287,9 +287,9 @@
                         <a href="{{route('home.showing',$pengaduan->id)}}">
                            <h4>{{$pengaduan->judul}}</h4>
                         </a>
-                          <p style="font-size: 13px;margin-top: 0%;"> 
+                          <p style="font-size: 13px;margin-top: 0%;">
                             <span class="align-middle font-weight-bold text-primary"><i class="fa fa-check-circle"></i></span><span> &nbsp;Selesai</span>
-                        {!!Str::limit($pengaduan->isi_laporan, 300 )!!} 
+                        {!!Str::limit($pengaduan->isi_laporan, 300 )!!}
                        <br> <img style="border-radius: 0;" class="img-fluid" src="{{asset('upload/'.$pengaduan->foto)}}" alt="">
                        <br>
                         <form action="{{route('masyarakat-destroy',$pengaduan->id)}}" method="POST">
@@ -303,7 +303,7 @@
                   @else
                   <h4 class="text-center" style="margin-bottom: 10%">BELUM ADA LAPORAN</h4>
 
-                @endif 
+                @endif
                 @endif
                  @endforeach
             {{ $pengaduans->links() }}
@@ -316,15 +316,15 @@
    </section>
    <!--================ Blog Area end =================-->
 
-        
-		<!-- Jquery Plugins, main Jquery -->	
+
+		<!-- Jquery Plugins, main Jquery -->
         <script src="./assets/js/plugins.js"></script>
                   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script type="text/javascript">
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            
+
             reader.onload = function (e) {
                 $('#profile-img-tag').attr('src', e.target.result);
             }
@@ -344,6 +344,6 @@ function myFunctionConfirm() {
 
 </script>
         <script src="./assets/js/main.js"></script>
-        
+
 
 @endsection

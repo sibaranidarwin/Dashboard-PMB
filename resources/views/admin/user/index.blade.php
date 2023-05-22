@@ -18,7 +18,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">User</a></li>
-                            <li class="active">All User</li>
+                            <li class="active">Daftar Admin</li>
                         </ol>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     </div>
                     @endif
                     <div class="card-header">
-                        <strong class="card-title">All User</strong>
+                        <strong class="card-title">Daftar Admin</strong>
                         <a href="{{route('tambah-user')}}" class="float-right btn btn-primary"><i
                                 class="fa fa-user font"></i>&nbsp;&nbsp;Tambah User</a>
                     </div>

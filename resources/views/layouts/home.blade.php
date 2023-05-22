@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/images/favicon.ico')}}">
 
         <!-- CSS here -->
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-  
-    
+
+
    </head>
 <style>
   html{
@@ -30,7 +30,7 @@
   }
 </style>
    <body>
-       
+
     <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -49,7 +49,7 @@
         </main>
    {{-- <footer> --}}
 
-{{-- 
+{{--
        <!-- Footer Start-->
       <div class="footer-main" data-background="assets/img/shape/footer_bg.png">
         <!-- footer-bottom aera -->
@@ -72,9 +72,9 @@
        <!-- Footer End-->
 
    </footer> --}}
-   
+
     <!-- JS here -->
-    
+
         <!-- All JS Custom Plugins Link Here here -->
         <script src="{{asset('./assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
         <!-- Jquery, Popper, Bootstrap -->
@@ -98,15 +98,15 @@
         <script src="{{asset('./assets/js/jquery.scrollUp.min.js')}}"></script>
         <script src="{{asset('./assets/js/jquery.nice-select.min.js')}}"></script>
         <script src="{{asset('./assets/js/jquery.sticky.js')}}"></script>
-        
+
         <!-- contact js -->
         <script src="{{asset('./assets/js/contact.js')}}"></script>
         <script src="{{asset('./assets/js/jquery.form.js')}}"></script>
         <script src="{{asset('./assets/js/jquery.validate.min.js')}}"></script>
         <script src="{{asset('./assets/js/mail-script.js')}}"></script>
         <script src="{{asset('./assets/js/jquery.ajaxchimp.min.js')}}"></script>
-        
-        <!-- Jquery Plugins, main Jquery -->    
+
+        <!-- Jquery Plugins, main Jquery -->
         <script src="{{asset('./assets/js/plugins.js')}}"></script>
         <script src="{{asset('./assets/js/main.js')}}"></script>
         <script>

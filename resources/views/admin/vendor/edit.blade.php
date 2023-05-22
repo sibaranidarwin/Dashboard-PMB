@@ -76,16 +76,6 @@
                                         <h5 class="text-sm-center mt-2 mb-1 font-weight-bold">{{$user->name}}</h5>
                                         <h5 class="text-sm-center mt-2 mb-1">{{$user->email}}</h5>
                                     </div>
-                                    <hr>
-                                    <div class="card-text text-sm-center">
-                                        <a href="#"><i class="fa fa-facebook pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-twitter pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="card">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="">Name</label>

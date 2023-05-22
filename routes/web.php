@@ -38,6 +38,16 @@ Route::get('about', 'IndexController@about')->name('about');
 Route::resource('admin/dashboard','AdminController')->middleware('admin');
 Route::get('admin/dashboard', 'AdminController@index')->name('admin/dashboard')->middleware('admin');
 
+Route::get('admin/pmdk', 'AdminController@pmdk')->name('admin/pmdk');
+Route::get('admin/usm1', 'AdminController@usm1')->name('admin/usm1');
+Route::get('admin/usm2', 'AdminController@usm2')->name('admin/usm2');
+Route::get('admin/usm3', 'AdminController@usm3')->name('admin/usm3');
+Route::get('admin/utbk', 'AdminController@utbk')->name('admin/utbk');
+Route::get('admin/prodi', 'AdminController@prodi')->name('admin/prodi');
+Route::get('admin/asal', 'AdminController@asal')->name('admin/asal');
+Route::get('admin/akreditasi', 'AdminController@akreditasi')->name('admin/akreditasi');
+
+
 // Purchase Order
 Route::get('admin/all', 'AdminController@all');
 Route::get('admin/po', 'AdminController@po')->name('admin/po')->middleware('admin');
@@ -51,7 +61,7 @@ Route::put('admin/draft','AdminController@uploaddraft');
 Route::get('admin/historydraft', 'AdminController@historydraft')->name('admin/historydraft');
 Route::get('admin/historyba', 'AdminController@historyba')->name('admin/historyba');
 
-// Invoice 
+// Invoice
 Route::get('admin/invoice', 'AdminController@invoice')->middleware('admin');
 Route::get('admin/detail-invoice/{id}', 'AdminController@detailinvoice')->name('detail-invoice');
 Route::get('admin/cetak_pdf/{id}', 'AdminController@cetak_pdf')->name('cetak-laporan');
@@ -127,28 +137,6 @@ Route::get('procumerent/detail-invoice-ba/{id}', 'ProcumerentController@detailin
 
 Route::get('procumerent/user/{id}/show', 'ProcumerentController@showing')->name('procumerent-user.show');
 
-// // INI MIDDLEWARE Warehouse
-Route::get('warehouse/dashboard', 'WarehouseController@index2')->name('warehouse/dashboard');
-Route::get('warehouse/all', 'WarehouseController@all');
-Route::get('warehouse/po', 'WarehouseController@po');
-Route::get('warehouse/pover', 'WarehouseController@pover');
-Route::get('warehouse/poreject', 'WarehouseController@poreject');
-
-Route::get('warehouse/invoice', 'WarehouseController@invoice')->name('warehouse/invoice');
-Route::get('warehouse/detail-invoice/{id}', 'WarehouseController@detailinvoice')->name('detail-invoice');
-Route::get('warehouse/invoiceba', 'WarehouseController@invoiceba')->name('warehouse/invoiceba');
-Route::get('warehouse/detail-invoice-ba/{id}', 'WarehouseController@detailinvoiceba')->name('detail-invoice-ba');
-
-Route::get('warehouse/disputed', 'WarehouseController@disputed')->name('warehouse/disputed');
-
-Route::post('warehouse/edit-datagr','PoController@edit')->name('update-datagr/{id}');
-Route::post('warehouse/updated-datagr','PoController@update')->name('update-datagr');
-
-Route::get('warehouse/user/{id}/show', 'WarehouseController@showing')->name('warehouse-user.show');
-Route::get('warehouse/user/{id}/profile', 'WarehouseController@show')->name('warehouse-user.showing');
-Route::put('warehouse/{id}/profile','WarehouseController@heyupdate')->name('update-warehouse');
-Route::post('warehouse/{id}/password','WarehouseController@editpass')->name('update-pass-warehouse');
-
 
 // // INI MIDDLEWARE Vendor
 Route::get('vendor/dashboard', 'VendorController@index2')->name('vendor/dashboard');
@@ -165,6 +153,7 @@ Route::get('vendor/utbk', 'VendorController@utbk')->name('vendor/utbk');
 
 Route::get('vendor/prodi', 'VendorController@prodi')->name('vendor/prodi');
 Route::get('vendor/asal', 'VendorController@asal')->name('vendor/asal');
+Route::get('vendor/akreditasi', 'VendorController@akreditasi')->name('vendor/akreditasi');
 
 Route::post('vendor/dispute-datagr','VendorController@edit')->name('dispute-datagr-vendor/{id}');
 

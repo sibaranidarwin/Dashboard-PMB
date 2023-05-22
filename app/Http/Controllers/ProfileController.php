@@ -92,7 +92,7 @@ class ProfileController extends Controller
                 "telp"     => $request->telp,
                 'email'     => $request->email,
                 "foto"        => $namaBaru,
-                ]);  
+                ]);
        return redirect ('profile')->with('success','Data Has Been Update');
     }
 

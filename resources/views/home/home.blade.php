@@ -12,13 +12,13 @@
                                 <a href="{{url('/')}}"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
-                                   
+
                         @guest
                          <div class="col-xl-8 col-lg-8 col-md-8">
                             <!-- Main-menu -->
                             <div class="main-menu f-left d-none d-lg-block">
-                                <nav> 
-                                    <ul id="navigation">    
+                                <nav>
+                                    <ul id="navigation">
                                         <li><a href="{{url('/')}}" style="color: #ff5c97;"> Home</a></li>
                                         <li><a href="{{url('about')}}">About Pedora</a></li>
                                     </ul>
@@ -34,8 +34,8 @@
                         <div class="col-xl-7 col-lg-7 col-md-7">
                             <!-- Main-menu -->
                             <div class="main-menu f-left d-none d-lg-block">
-                                <nav> 
-                                    <ul id="navigation">    
+                                <nav>
+                                    <ul id="navigation">
                                         <li><a href="{{url('home')}}" style="color: #ff5c97;"> Home</a></li>
                                         <li><a href="{{url('about')}}">About Pedora</a></li>
                                     </ul>
@@ -54,8 +54,8 @@
 
                             </div>
                         </div>
-                        @endguest 
-                        
+                        @endguest
+
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -74,7 +74,7 @@
                 padding-top: 130px;
             }
             .blog_area{
-              padding-top: 2%; 
+              padding-top: 2%;
             }
             .blog_right_sidebar{
               margin-top: -7.5%;
@@ -85,7 +85,7 @@
         </style>
     </div>
      <!-- Slider Area End-->
-     
+
    <!--================Blog Area =================-->
    <section class="blog_area single-post-area section-padding">
       <div class="container">
@@ -115,7 +115,7 @@
                                 </div>
                               @endif
                   <h4 style="margin-top: 2%">Laporan Saya</h4><br><br>
-                 
+
 
                  @foreach($laporansaya as $laporan)
 {{--                  @if($laporan->id->first == null)
@@ -129,7 +129,7 @@
                         <a href="{{route('home.showing',$laporan->id)}}">
                            <h4>{{$laporan->judul}}</h4>
                         </a>
-                          <p style="font-size: 13px;margin-top: -1%;"> 
+                          <p style="font-size: 13px;margin-top: -1%;">
                             <span class="align-middle"><i class="fa fa-info-circle"></i></span><span> &nbsp;Belum Terverifikasi</span>
                             <span style="margin-left:30px" class="border rounded">&nbsp;&nbsp;&nbsp;Harus diverifikasi dalam 3 hari&nbsp;&nbsp;&nbsp;</span></p>
 
@@ -145,7 +145,7 @@
                         <a href="{{route('home.showing',$laporan->id)}}">
                            <h4>{{$laporan->judul}}</h4>
                         </a>
-                          <p style="font-size: 13px;margin-top: -1%;"> 
+                          <p style="font-size: 13px;margin-top: -1%;">
                             <span class="align-middle font-weight-bold text-danger"><i class="fa fa-sync rounded rounded-circle"></i></span><span class="text-danger"> &nbsp;Proses</span>
                         <p>{!!  Illuminate\Support\Str::limit($laporan->isi_laporan, 200)!!}  </p>
                         <br> <img style="border-radius: 0;" class="img-fluid" src="{{asset('upload/'.$laporan->foto)}}" alt="">
@@ -158,22 +158,22 @@
                         <a href="{{route('home.showing',$laporan->id)}}">
                            <h4>{{$laporan->judul}}</h4>
                         </a>
-                          <p style="font-size: 13px;margin-top: -1%;"> 
+                          <p style="font-size: 13px;margin-top: -1%;">
                             <span class="align-middle font-weight-bold text-primary"><i class="fa fa-check-circle"></i></span><span> &nbsp;Selesai</span>
                         <p>{!!  Illuminate\Support\Str::limit($laporan->isi_laporan, 200)!!} </p>
                        <br> <img style="border-radius: 0;" class="img-fluid" src="{{asset('upload/'.$laporan->foto)}}" alt="">
                      </div>
                   </div>
-                  
-                 
 
-                @endif 
+
+
+                @endif
                 @endif
                  @endforeach
                 {!! $laporansaya->links() !!}
 
 
-               
+
 
                </div>
                <div class="comments-area" id="coment">
@@ -189,7 +189,7 @@
                            <div class="desc">
                             <h5>{{$pengaduan->judul}} &nbsp;&nbsp;<i class="fa fa-check-circle text-danger" style="font-size: 15px">&nbsp;Proses</i></h5>
                               <p class="comment pt-2" >
-                                 {!!  Illuminate\Support\Str::limit($pengaduan->isi_laporan, 200)!!} 
+                                 {!!  Illuminate\Support\Str::limit($pengaduan->isi_laporan, 200)!!}
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
@@ -215,7 +215,7 @@
                            <div class="desc">
                             <h5>{{$pengaduan->judul}} &nbsp;&nbsp;<i class="fa fa-check-circle text-primary" style="font-size: 15px">&nbsp;Selesai</i></h5>
                               <p class="comment pt-2" >
-                                 {!!  Illuminate\Support\Str::limit($pengaduan->isi_laporan, 200)!!} 
+                                 {!!  Illuminate\Support\Str::limit($pengaduan->isi_laporan, 200)!!}
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
@@ -243,7 +243,7 @@
                      <!-- PROFILE -->
                     <div class="card">
                       <div class="card-header" style="background-color: #ffff;border:none;background-image: url('https://image.freepik.com/free-vector/abstract-futuristic-background_23-2148392654.jpg');height:100px  ;">
-                        
+
                       </div>
                       <div class="card-body container" style="margin-top: -20%;">
                       <div class="media">
@@ -285,7 +285,7 @@
                       </div>
                     </div>
                     </div>
-  
+
                   </aside>
                     <aside class="single_sidebar_widget tag_cloud_widget">
                      @foreach($pengumuman as $row)

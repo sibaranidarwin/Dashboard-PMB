@@ -1,4 +1,4 @@
-@extends('vendor.layouts.sidebar')
+@extends('admin.layouts.app')
 @section('content')
 <link rel="stylesheet" href="{{asset('assets/css/argon-dashboard.css')}}">
 <style>
@@ -138,13 +138,17 @@ Highcharts.setOptions({
                         }
           }
       },
+      colors: [
+                    'green',
+                    'blue'
+                    ],
       series: [{
           name: 'Jumlah Pendaftar',
-          data: [108, 75, 84, 35, 86, 84, 13, 13],
+          data: [100, 100, 120, 100, 200, 203, 200, 100],
 
       }, {
           name: 'Jumlah Lulus',
-          data: [22, 19, 17, 14, 9, 15, 3, 4],
+          data: [56, 20, 30, 21, 140, 139, 129, 30],
 
       },],
 

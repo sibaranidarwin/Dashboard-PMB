@@ -55,16 +55,16 @@ class UserController extends Controller
         ]);
 
         $user=User::create([
-            'name' => $request['name'], 
-            'id_vendor' => $request['id_vendor'],
-            'companycode' => $request['companycode'],
+            'name' => $request['name'],
             'username' => $request['username'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'level' => $request['level'],
         ]);
-        
-        return redirect ('admin/user')->with('success','Data Has Been Saved');
+
+        // dd($user);
+
+        return redirect ('admin/vendor')->with('success','Data Has Been Saved');
     }
 
     /**
@@ -86,7 +86,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        
+
     }
 
     /**
@@ -112,7 +112,7 @@ class UserController extends Controller
                 "name"     => $request->name,
                 'email'     => $request->email,
                 "foto"        => $namaBaru,
-                ]);  
+                ]);
         return  redirect()->back()->with('warning','Data Has been changed!');
     }
 
@@ -122,7 +122,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-     
+
     public function destroy(User $user)
     {
         $user->delete();
@@ -132,7 +132,7 @@ class UserController extends Controller
 
     public function showing($id){
         $user = \App\User::find($id);
-        return view('admin.user.profile',compact('user'));  
+        return view('admin.user.profile',compact('user'));
     }
     public function updatedong(Request $request, User $user)
     {
@@ -150,7 +150,7 @@ class UserController extends Controller
                 "name"     => $request->name,
                 'email'     => $request->email,
                 "foto"        => $namaBaru,
-                ]);  
+                ]);
         return redirect ('admin/masyarakat')->with('warning','Data Telah di ubah.');
     }
      public function heyupdate(Request $request, User $user)
@@ -169,7 +169,7 @@ class UserController extends Controller
                 "name"     => $request->named,
                 'email'     => $request->email,
                 "foto"        => $namaBaru,
-                ]);  
+                ]);
         return back()->with('warning','Data Telah di ubah.');
     }
 }

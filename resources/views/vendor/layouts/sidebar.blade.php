@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PMB - Vendor</title>
+    <title>PMB - User</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,7 +30,7 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -111,13 +111,13 @@
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="{{url('vendor/dashboard')}}"><i class="menu-icon fa fa-laptop"></i>Home</a>
+                <li class="">
+                    <a href="{{url('vendor/dashboard')}}"><i class="menu-icon fa fa-home"></i>Home</a>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                        <i class="menu-icon fa fa-file"></i>Jalur Pendaftaran</a>
+                        <i class="menu-icon fa fa-retweet"></i>Jalur Pendaftaran</a>
 
                     <ul class="sub-menu children dropdown-menu" id="menu_dropdown">
                         <li>
@@ -143,17 +143,16 @@
                     </ul>
                 </li>
 
-                <li class="active">
-                    <a href="{{ url('vendor/prodi') }}"> <i class="menu-icon fa fa-warning"></i>Prodi</a>
+                <li class="">
+                    <a href="{{ url('vendor/prodi') }}"> <i class="menu-icon fa fa-bookmark"></i>Prodi</a>
                 </li>
 
-                <li class="active">
-                    <a href="{{ url('vendor/asal') }}"> <i class="menu-icon fa fa-file-pdf-o"></i>Asal Sekolah</a>
+                <li class="">
+                    <a href="{{ url('vendor/asal') }}"> <i class="menu-icon fa fa-folder-open"></i>Asal Sekolah</a>
                 </li>
 
-                <li class="menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="menu-icon fa fa-file-pdf-o"></i>Akreditasi</a>
+                <li class="">
+                    <a href="{{ url('vendor/akreditasi') }}"> <i class="menu-icon fa fa-circle-check"></i>Akreditasi</a>
                 </li>
 
             </ul>
@@ -241,7 +240,7 @@
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
-                
+
                 reader.onload = function (e) {
                     $('#profile-img-tag').attr('src', e.target.result);
                 }

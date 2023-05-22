@@ -18,7 +18,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">User</a></li>
-                            <li class="active">All Vendor</li>
+                            <li class="active">Daftar Pengunjung</li>
                         </ol>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     </div>
                     @endif
                     <div class="card-header">
-                        <strong class="card-title">All Vendor</strong>
+                        <strong class="card-title">Daftar Pengunjung</strong>
                     </div>
                     <div class="table-stats order-table ov-h">
                         <table class="table ">
@@ -71,7 +71,7 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
-                                @if($user->level == "vendor")
+                                @if($user->level == "pengunjung")
                                 <tr>
                                     <td class="serial">{{++$i}}</td>
                                     <td class="">
@@ -83,7 +83,7 @@
                                     <td> <span class="name">{{$user->name}}</span> </td>
                                     <td class="text-lowercase">{{$user->email}} </td>
                                     <td class="text-center"> <span
-                                            class="btn btn-warning font-weight-bold">Vendor</span> </td>
+                                            class="btn btn-warning font-weight-bold">Pengunjung</span> </td>
                                     <td class="text-center"><span>
                                             <form action="{{route('user.destroy',$user->id)}}" method="POST">
                                                 @csrf

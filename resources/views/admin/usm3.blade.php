@@ -1,4 +1,4 @@
-@extends('vendor.layouts.sidebar')
+@extends('admin.layouts.app')
 @section('content')
 <link rel="stylesheet" href="{{asset('assets/css/argon-dashboard.css')}}">
 <style>

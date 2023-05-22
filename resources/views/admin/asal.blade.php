@@ -1,4 +1,4 @@
-@extends('vendor.layouts.sidebar')
+@extends('admin.layouts.app')
 @section('content')
 <link rel="stylesheet" href="{{asset('assets/css/argon-dashboard.css')}}">
 <style>
@@ -104,7 +104,7 @@
     <!-- Animated -->
 
 
-    <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard Mahasiswa Baru</strong></h4>
+    <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asal Kabupaten</strong></h4>
         <hr>
 
         <div class="row">

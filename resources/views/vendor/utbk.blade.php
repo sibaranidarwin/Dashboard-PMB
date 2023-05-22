@@ -56,13 +56,13 @@
 
 <div class="content">
     <!-- Animated -->
-       
 
-    <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard Mahasiswa Baru</strong></h4>
+
+    <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UTBK</strong></h4>
         <hr>
 
         <div class="row">
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
                             <select class="form-control form-control-sm form-select col-4 right" name="vendor">
@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
                             <select class="form-control form-control-sm form-select col-4 right" name="vendor">
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
                             <select class="form-control form-control-sm form-select col-4 right" name="vendor">
@@ -120,147 +120,198 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
-Highcharts.chart('jumlah1', {
-  chart: {
-    plotBackgroundColor: null,
-    plotBorderWidth: null,
-    plotShadow: false,
-    type: 'pie'
-  },
-  title: {
-    text: 'Pilihan 1',
-    align: 'center'
-  },
-  tooltip: {
-    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-  },
-  accessibility: {
-    point: {
-      valueSuffix: '%'
-    }
-  },
-  plotOptions: {
-    pie: {
-      allowPointSelect: true,
-      cursor: 'pointer',
-      dataLabels: {
-        enabled: true,
-        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-      }
-    }
-  },
-  series: [{
-    name: 'Brands',
-    colorByPoint: true,
-    data: [{
-      name: 'S1 IF',
-      y: 70.67,
-      sliced: true,
-      selected: true
-    }, {
-      name: 'TRPL',
-      y: 14.77
-    },  {
-      name: 'S1 SI',
-      y: 4.86
-    }, ]
-  }]
-});
-</script>
-    <script>
-        Highcharts.chart('jumlah2', {
+    Highcharts.setOptions({
+        lang: {
+          thousandsSep: ' '
+        },
+        colors: [ '#779bd9','#2750a8']
+      })
+      Highcharts.chart('jumlah1', {
           chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
+              type: 'column',
+              zoomType: 'y',
+              //backgroundColor:"#FBFAE4"
           },
           title: {
-            text: 'Pilihan 2',
-            align: 'center'
+              text: 'Pilihan 1'
+          },
+          xAxis: {
+            categories: [
+              'D3 TI',
+              'D3 TK',
+              'D4 TRPL',
+              'S1 MR',
+              'S1 IF',
+              'S1 TB',
+              'S1 TE',
+              'S1 SI'
+          ],
+              crosshair: true
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: 'Total Mahasiswa'
+              }
           },
           tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-          },
-          accessibility: {
-            point: {
-              valueSuffix: '%'
-            }
-          },
+                  headerFormat: '<span style="font-size:10px"><b>{point.key}</b></span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0"> </td>' +
+                      '<td style="padding:0"><b>{point.y:,.0f}</b></td></tr>' + 'Jumlah: <b>{point.count:,.1f}</b><br/>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+              },
           plotOptions: {
-            pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+              column: {
+                  pointPadding: 0.2,
+                  borderWidth: 0,
+                  dataLabels: {
+                                enabled: true,
+                                format: '{point.y:,.0f}'
+                            }
               }
-            }
           },
+          colors: [
+            ' #000080',
+            ],
           series: [{
-            name: 'Brands',
-            colorByPoint: true,
-            data: [{
-              name: 'S1 IF',
-              y: 70.67,
-              sliced: true,
-              selected: true
-            }, {
-              name: 'TRPL',
-              y: 14.77
-            },  {
-              name: 'S1 SI',
-              y: 4.86
-            } ]
-          }]
-        });
-        </script>
-         <script>
-            Highcharts.chart('jumlah3', {
+              showInLegend: false,
+              data: [56, 100, 120, 100,56, 100, 120, 100],
+
+          },],
+
+
+      });
+      </script>
+    <script>
+        Highcharts.setOptions({
+            lang: {
+              thousandsSep: ' '
+            },
+            colors: [ '#779bd9','#2750a8']
+          })
+          Highcharts.chart('jumlah2', {
               chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false,
-                type: 'pie'
+                  type: 'column',
+                  zoomType: 'y',
+                  //backgroundColor:"#FBFAE4"
               },
               title: {
-                text: 'Pilihan 3',
-                align: 'center'
+                  text: 'Pilihan 2'
+              },
+              xAxis: {
+                categories: [
+                  'D3 TI',
+                  'D3 TK',
+                  'D4 TRPL',
+                  'S1 MR',
+                  'S1 IF',
+                  'S1 TB',
+                  'S1 TE',
+                  'S1 SI'
+              ],
+                  crosshair: true
+              },
+              yAxis: {
+                  min: 0,
+                  title: {
+                      text: 'Total Mahasiswa'
+                  }
               },
               tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-              },
-              accessibility: {
-                point: {
-                  valueSuffix: '%'
-                }
+                  headerFormat: '<span style="font-size:10px"><b>{point.key}</b></span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0"> </td>' +
+                      '<td style="padding:0"><b>{point.y:,.0f}</b></td></tr>' + 'Jumlah: <b>{point.count:,.1f}</b><br/>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
               },
               plotOptions: {
-                pie: {
-                  allowPointSelect: true,
-                  cursor: 'pointer',
-                  dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                  column: {
+                      pointPadding: 0.2,
+                      borderWidth: 0,
+                      dataLabels: {
+                                    enabled: true,
+                                    format: '{point.y:,.0f}'
+                                }
                   }
-                }
               },
+              colors: [
+            ' #000080',
+            ],
               series: [{
-                name: 'Brands',
-                colorByPoint: true,
-                data: [{
-                  name: 'D3 TK',
-                  y: 70.67,
-                  sliced: true,
-                  selected: true
-                }, {
-                  name: 'S1 TB',
-                  y: 14.77
-                },  {
-                  name: 'S1 MR',
-                  y: 4.86
-                }, ]
-              }]
-            });
-            </script>
+                 showInLegend: false,
+                  data: [56, 100, 120, 100,56, 100, 120, 100],
+
+              },],
+
+
+          });
+          </script>
+         <script>
+            Highcharts.setOptions({
+                lang: {
+                  thousandsSep: ' '
+                },
+                colors: [ '#779bd9','#2750a8']
+              })
+              Highcharts.chart('jumlah3', {
+                  chart: {
+                      type: 'column',
+                      zoomType: 'y',
+                      //backgroundColor:"#FBFAE4"
+                  },
+                  title: {
+                      text: 'Pilihan 3'
+                  },
+                  xAxis: {
+                    categories: [
+                      'D3 TI',
+                      'D3 TK',
+                      'D4 TRPL',
+                      'S1 MR',
+                      'S1 IF',
+                      'S1 TB',
+                      'S1 TE',
+                      'S1 SI'
+                  ],
+                      crosshair: true
+                  },
+                  yAxis: {
+                      min: 0,
+                      title: {
+                          text: 'Total Mahasiswa'
+                      }
+                  },
+                  tooltip: {
+                  headerFormat: '<span style="font-size:10px"><b>{point.key}</b></span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0"> </td>' +
+                      '<td style="padding:0"><b>{point.y:,.0f}</b></td></tr>' + 'Jumlah: <b>{point.count:,.1f}</b><br/>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+              },
+                  plotOptions: {
+                      column: {
+                          pointPadding: 0.2,
+                          borderWidth: 0,
+                          dataLabels: {
+                                        enabled: true,
+                                        format: '{point.y:,.0f}'
+                                    }
+                      }
+                  },
+                  colors: [
+                    '#000080',
+                    ],
+                  series: [{
+                    showInLegend: false,
+                      data: [56, 100, 120, 100,56, 100, 120, 100],
+
+                  },],
+
+
+              });
+              </script>
 @endsection

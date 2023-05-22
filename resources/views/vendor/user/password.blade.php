@@ -56,7 +56,7 @@
                     <div class="col-md-6 offset-3"><br>
                         <div class="card">
                             <div class="card-header" style="text-align: center;">
-                                <i class="fa fa-user"></i><strong class="card-title pl-3">Setting Password</strong>
+                                <i class="fa fa-user"></i><strong class="card-title pl-3">Changes Password</strong>
                             </div>
                             <div class="card-body">
                                 <form class="form-horizontal" action="{{ route('update-vendor', $user->id) }}"
@@ -75,16 +75,10 @@
                                         <h5 class="text-sm-center mt-2 mb-1 font-weight-bold">{{$user->name}}</h5>
                                         <h5 class="text-sm-center mt-2 mb-1">{{$user->email}}</h5>
                                     </div>
-                                    <hr>
-                                    <div class="card-text text-sm-center">
-                                        <a href="#"><i class="fa fa-facebook pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-twitter pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
-                                        <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
-                                    </div>
+{{--
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card"> --}}
                             <div class="card-body">
                                 <form style="align-content: center;" method="POST"
                                     action="{{ route('update-pass-vendor', $user->id) }}">
@@ -95,7 +89,7 @@
                                         <label for="new_password" class="col-md-4 control-label">Old Password</label>
                                         <div class="row">
                                         <div class="col-md-1">
-                                            
+
                                         </div>
                                         <div class="col-md-10">
                                             <input id="current_password" type="password" class="form-control"
@@ -115,7 +109,7 @@
                                         <label for="new_password" class="col-md-4 control-label">New password</label>
                                         <div class="row">
                                             <div class="col-md-1">
-                                                
+
                                             </div>
                                         <div class="col-md-10">
                                             <input id="new_password" type="password" class="form-control"
@@ -135,7 +129,7 @@
                                         <label for="new_password_confirm" class="col-md-6 control-label">Confirm New Password</label>
                                             <div class="row">
                                                 <div class="col-md-1">
-                                                    
+
                                                 </div>
                                         <div class="col-md-10">
                                             <input id="new_password_confirm" type="password" class="form-control"
