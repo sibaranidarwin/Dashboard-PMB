@@ -19,9 +19,9 @@ class UsersTableSeeder extends Seeder
             'level' =>'admin',
         ]); 
         User::create([
-            'name' => 'Darwin Sibarani',
+            'name' => 'Rafelli Simangunsong',
             'id_vendor' => 2011000155,            
-            'email' => 'sibaranidarwin32@gmail.com',
+            'email' => 'rafelli@gmail.com',
             'npwp' => '4444444444444444',
             'password' => bcrypt('adminadmin'),
             'level' =>'pengunjung',

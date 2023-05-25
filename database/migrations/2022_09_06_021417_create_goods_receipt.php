@@ -16,7 +16,6 @@ class CreateGoodsReceipt extends Migration
     {
         Schema::create('goods_receipt', function (Blueprint $table) {
             $table->bigIncrements('id_gr');
-            $table->bigInteger('id_inv')->unsigned()->nullable();
             // $table->foreign('id_inv')->references('id_inv')->on('invoice');
             $table->bigInteger('id_vendor')->unsigned()->nullable();
             // $table->foreign('id_vendor')->references('id_vendor')->on('vendor');
