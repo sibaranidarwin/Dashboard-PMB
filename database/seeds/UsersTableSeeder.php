@@ -20,9 +20,7 @@ class UsersTableSeeder extends Seeder
         ]); 
         User::create([
             'name' => 'Rafelli Simangunsong',
-            'id_vendor' => 2011000155,            
             'email' => 'rafelli@gmail.com',
-            'npwp' => '4444444444444444',
             'password' => bcrypt('adminadmin'),
             'level' =>'pengunjung',
         ]); 

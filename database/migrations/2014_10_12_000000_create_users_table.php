@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->bigInteger('id_vendor')->unsigned()->nullable();
-            $table->foreign('id_vendor')->references('id_vendor')->on('vendor');
+            $table->foreign('id_vendor')->references('id_vendor')->on('level');
             $table->integer('companycode')->nullable();
             $table->string('email')->unique();
             $table->string('npwp')->nullable();

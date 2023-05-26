@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class vendorID extends Model
 {
-    protected $table = 'vendor';
+    protected $table = 'level';
     protected $fillable = [
         'id_vendor','vendor_name','vendor_address', 'logo'
     ];
